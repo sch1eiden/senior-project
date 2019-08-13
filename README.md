@@ -13,7 +13,7 @@ For Frontend
 
 For Backend
 1. Go to 'backend' folder
-2. If you use VS Code, you should install env first by follow in 
+2. You should install env first by follow in 
 "Create a project environment for the Django tutorial#" 
 section here https://code.visualstudio.com/docs/python/tutorial-django
 Change "python -m pip install django" to "pip install django==2.2.4"

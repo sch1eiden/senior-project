@@ -1,4 +1,7 @@
 "# senior-project"
+Prerequisite
+1.Python 3.7 x64
+
 First SetUp
 
 For Frontend

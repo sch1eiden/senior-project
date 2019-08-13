@@ -1,8 +1,8 @@
 "# senior-project"
+First SetUp
+
 Prerequisite
 1.Python 3.7 x64
-
-First SetUp
 
 For Frontend
 1. Go to 'frontend' folder

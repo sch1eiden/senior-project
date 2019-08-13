@@ -4,7 +4,7 @@ First SetUp
 
 Prerequisite
 
-1.Python 3.7 x64
+1.Python 3.7.4 x64
 
 For Frontend
 1. Go to 'frontend' folder

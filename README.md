@@ -20,3 +20,4 @@ Change "python -m pip install django" to "pip install django==2.2.4"
 3. If you open folder in backend normally, it will activated normally and can run this command to test "py manage.py runserver"
 4. If you didn't open backend folder and want to run django command. You can activate env by add this command in Terminal
 "& c:/Wherever your project directory are/senior-project/backend/env/Scripts/activate.ps1"
+5. Install rest_framework by add this command in terminal "pip install restframework"

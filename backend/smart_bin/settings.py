@@ -55,7 +55,7 @@ ROOT_URLCONF = 'smart_bin.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['web_app/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

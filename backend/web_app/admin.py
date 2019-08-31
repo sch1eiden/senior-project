@@ -4,6 +4,7 @@ from web_app.models import Bin, Locate, Location, GarbageType, Maid, Responsible
 
 admin.site.register(Bin)
 admin.site.register(Locate)
+admin.site.register(Location)
 admin.site.register(GarbageType)
 admin.site.register(Maid)
 admin.site.register(Responsible)

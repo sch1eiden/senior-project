@@ -1,44 +1,31 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.css';
-import Greet from './components/Greet';
-// import MyComponents from './components/Greet'
-// import { Greet } from './components/Greet'
-import Welcome from './components/Welcome';
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       {/* <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header> */}
-//       <Greet />
-//       {/* <MyComponents /> */}
-//       <Welcome />
-//     </div>
-//   );
-// }
 
 class App extends Component {
+  state = {
+    web_app: []
+  };
+  async componentDidMount() {
+    try {
+      const res = await fetch('http://127.0.0.1:8000/api/'); // fetching the data from api, before the page loaded
+      const web_app = await res.json();
+      this.setState({
+        web_app
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
   render() {
     return (
-      <div className="App">
-        <Greet />
-        <Welcome />
+      <div align="center">
+        {this.state.web_app.map(item => (
+          <div key={item.garbage_id}>
+            <h1>{item.garbage_id}</h1>
+            <span>{item.garbage_name}</span>
+          </div>
+        ))}
       </div>
-    )
+    );
   }
 }
 

@@ -18,7 +18,7 @@ class Bin(models.Model):
 
     def __str__(self):
         """Unicode representation of MODELNAME."""
-        pass
+        return str(self.bin_id)
     # TODO: Define custom methods here
 
 
@@ -38,7 +38,7 @@ class Locate(models.Model):
 
     def __str__(self):
         """Unicode representation of MODELNAME."""
-        pass
+        return str(self.locate_id)
 
 
 class Location(models.Model):
@@ -58,7 +58,7 @@ class Location(models.Model):
 
     def __str__(self):
         """Unicode representation of MODELNAME."""
-        pass
+        return str(self.garbage_id)
 
 
 class GarbageType(models.Model):
@@ -76,7 +76,7 @@ class GarbageType(models.Model):
 
     def __str__(self):
         """Unicode representation of GarbageType."""
-        pass
+        return self.garbage_name
 
 
 class Maid(models.Model):
@@ -89,12 +89,12 @@ class Maid(models.Model):
 
     class Meta:
         """Meta definition for MODELNAME."""
-        verbose_name = 'MaidName'
-        verbose_name_plural = 'MaidNames'
+        verbose_name = 'Maid'
+        verbose_name_plural = 'Maids'
 
     def __str__(self):
         """Unicode representation of MODELNAME."""
-        pass
+        return '%s %s %s' % (str(self.maid_id), self.maid_name, self.phone_number)
 
 
 class Responsible(models.Model):
@@ -112,7 +112,7 @@ class Responsible(models.Model):
 
     def __str__(self):
         """Unicode representation of MODELNAME."""
-        pass
+        return str(self.responsible_id)
 
 
 class RegisteredUser(models.Model):
@@ -131,7 +131,7 @@ class RegisteredUser(models.Model):
 
     def __str__(self):
         """Unicode representation of MODELNAME."""
-        pass
+        return str(self.user_id)
 
 
 class Register(models.Model):
@@ -149,7 +149,7 @@ class Register(models.Model):
 
     def __str__(self):
         """Unicode representation of MODELNAME."""
-        pass
+        return str(self.register_id)
 
 
 class Message(models.Model):
@@ -168,7 +168,7 @@ class Message(models.Model):
 
     def __str__(self):
         """Unicode representation of Message."""
-        pass
+        return str(self.notification_id)
 
 
 class Send(models.Model):
@@ -187,4 +187,4 @@ class Send(models.Model):
 
     def __str__(self):
         """Unicode representation of Send."""
-        pass
+        return str(self.send_id)

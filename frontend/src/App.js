@@ -15,7 +15,7 @@ class App extends Component {
   //   }
   // }
   componentDidMount() {
-    fetch('http://127.0.0.1:8000/api/')
+    fetch('http://127.0.0.1:8000/api/contain/')
       .then(res => res.json())
       .then((data) => {
         this.setState({ web_app: data })
@@ -27,9 +27,13 @@ class App extends Component {
     return (
       <div align="center">
         {this.state.web_app.map(item => (
-          <div key={item.garbage_id}>
-            <h1>{item.garbage_id}</h1>
-            <span>{item.garbage_name}</span>
+          <div key={item.contain_id}>
+            <h1>ContainID {item.contain_id}</h1>
+            <h1>GarbageID {item.garbage_id}</h1>
+            <h2>BinID {item.bin_id}</h2>
+            <h3>Amount {item.amount}</h3>
+            <p>Level {item.level}</p>
+            <span>DateTimeValue {item.date_time_value}</span>
           </div>
         ))}
       </div>

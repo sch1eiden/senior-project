@@ -22,30 +22,11 @@ class Bin(models.Model):
     # TODO: Define custom methods here
 
 
-class Locate(models.Model):
-    """Model definition for MODELNAME."""
-
-    # TODO: Define fields here
-    locate_id = models.PositiveIntegerField(blank=True, null=True)
-    bin_id = models.ForeignKey(Bin, on_delete=models.SET_NULL, null=True)
-    locate_date = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        """Meta definition for MODELNAME."""
-
-        verbose_name = 'Locate'
-        verbose_name_plural = 'Locate'
-
-    def __str__(self):
-        """Unicode representation of MODELNAME."""
-        return str(self.locate_id)
-
-
 class Location(models.Model):
     """Model definition for MODELNAME."""
 
     # TODO: Define fields here
-    garbage_id = models.CharField(max_length=100, primary_key=True)
+    location_id = models.PositiveIntegerField(primary_key=True)
     location_name = models.CharField(max_length=200)
     latitude = models.CharField(max_length=200)
     longtitude = models.CharField(max_length=200)
@@ -58,14 +39,32 @@ class Location(models.Model):
 
     def __str__(self):
         """Unicode representation of MODELNAME."""
-        return str(self.garbage_id)
+        return str(self.location_id)
+
+
+class Locate(models.Model):
+    """Model definition for MODELNAME."""
+
+    # TODO: Define fields here
+    locate_id = models.PositiveIntegerField(primary_key=True)
+    bin_id = models.ForeignKey(Bin, on_delete=models.SET_NULL, null=True)
+    location_id = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
+    class Meta:
+        """Meta definition for MODELNAME."""
+
+        verbose_name = 'Locate'
+        verbose_name_plural = 'Locate'
+
+    def __str__(self):
+        """Unicode representation of MODELNAME."""
+        return str(self.locate_id)
 
 
 class GarbageType(models.Model):
     """Model definition for GarbageType."""
 
     # TODO: Define fields here
-    garbage_id = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
+    garbage_id = models.PositiveIntegerField(primary_key=True)
     garbage_name = models.CharField(max_length=200)
 
     class Meta:
@@ -79,11 +78,33 @@ class GarbageType(models.Model):
         return self.garbage_name
 
 
+class Contain(models.Model):
+    """Model definition for Contain."""
+
+    # TODO: Define fields here
+    contain_id = models.PositiveIntegerField(primary_key=True)
+    garbage_id = models.ForeignKey(GarbageType, on_delete=models.SET_NULL, null=True)
+    bin_id = models.ForeignKey(Bin, on_delete=models.SET_NULL, null=True)
+    amount = models.PositiveIntegerField()
+    level = models.PositiveIntegerField()
+    date_time_value = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        """Meta definition for Contain."""
+
+        verbose_name = 'Contain'
+        verbose_name_plural = 'Contains'
+
+    def __str__(self):
+        """Unicode representation of Contain."""
+        return str(self.date_time_value)
+
+
 class Maid(models.Model):
     """Model definition for MODELNAME."""
 
     # TODO: Define fields here
-    maid_id = models.IntegerField(primary_key=True)
+    maid_id = models.PositiveIntegerField(primary_key=True)
     maid_name = models.CharField(max_length=200)
     phone_number = models.CharField(max_length=200)
 
@@ -101,8 +122,9 @@ class Responsible(models.Model):
     """Model definition for MODELNAME."""
 
     # TODO: Define fields here
-    responsible_id = models.IntegerField(primary_key=True)
+    responsible_id = models.PositiveIntegerField(primary_key=True)
     maid_id = models.ForeignKey(Maid, on_delete=models.SET_NULL, null=True)
+    bin_id = models.ForeignKey(Bin, on_delete=models.SET_NULL, null=True)
     
     class Meta:
         """Meta definition for MODELNAME."""
@@ -120,8 +142,9 @@ class RegisteredUser(models.Model):
 
     # TODO: Define fields here
 
-    user_id = models.IntegerField(primary_key=True)
-    phone_number = models.ForeignKey(Maid, on_delete=models.SET_NULL, null=True)
+    user_id = models.PositiveIntegerField(primary_key=True)
+    user_name = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=200)
     
     class Meta:
         """Meta definition for MODELNAME."""
@@ -138,7 +161,7 @@ class Register(models.Model):
     """Model definition for MODELNAME."""
 
     # TODO: Define fields here
-    register_id = models.IntegerField(primary_key=True)
+    register_id = models.PositiveIntegerField(primary_key=True)
     bin_id = models.ForeignKey(Bin, on_delete=models.SET_NULL, null=True)
     user_id = models.ForeignKey(RegisteredUser, on_delete=models.SET_NULL, null=True)
 
@@ -156,9 +179,9 @@ class Message(models.Model):
     """Model definition for Message."""
 
     # TODO: Define fields here
-    notification_id = models.IntegerField(primary_key=True)
+    notification_id = models.PositiveIntegerField(primary_key=True)
     text = models.CharField(max_length=200)
-    timestamp = models.DateTimeField(auto_now=True)
+    date_time_value = models.DateTimeField(auto_now=True)
 
     class Meta:
         """Meta definition for Message."""
@@ -175,7 +198,7 @@ class Send(models.Model):
     """Model definition for Send."""
 
     # TODO: Define fields here
-    send_id = models.IntegerField(primary_key=True)
+    send_id = models.PositiveIntegerField(primary_key=True)
     notification_id = models.ForeignKey(Message, on_delete=models.SET_NULL, null=True)
     responsible_id = models.ForeignKey(Responsible, on_delete=models.SET_NULL, null=True)
 

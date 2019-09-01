@@ -1,8 +1,32 @@
 from django.shortcuts import render
 from rest_framework import generics
 
-from .models import GarbageType
-from .serializers import GarbageTypeSerializer
+from .models import Bin, Location, Locate, GarbageType, Contain, Maid, Responsible, RegisteredUser, Register, Message, Send
+from .serializers import BinSerializer, LocationSerializer, LocateSerializer, GarbageTypeSerializer, ContainSerializer, MaidSerializer, ResponsibleSerializer, RegisteredUserSerializer, RegisterSerializer, MessageSerializer, SendSerializer
+
+class ListBin(generics.ListCreateAPIView):
+    queryset = Bin.objects.all()
+    serializer_class = BinSerializer
+
+class DetailBin(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Bin.objects.all()
+    serializer_class = BinSerializer
+
+class ListLocation(generics.ListCreateAPIView):
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
+
+class DetailLocation(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
+
+class ListLocate(generics.ListCreateAPIView):
+    queryset = Locate.objects.all()
+    serializer_class = LocateSerializer
+
+class DetailLocate(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Locate.objects.all()
+    serializer_class = LocateSerializer
 
 class ListGarbage(generics.ListCreateAPIView):
     queryset = GarbageType.objects.all()
@@ -11,3 +35,59 @@ class ListGarbage(generics.ListCreateAPIView):
 class DetailGarbage(generics.RetrieveUpdateDestroyAPIView):
     queryset = GarbageType.objects.all()
     serializer_class = GarbageTypeSerializer
+
+class ListContain(generics.ListCreateAPIView):
+    queryset = Contain.objects.all()
+    serializer_class = ContainSerializer
+
+class DetailContain(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Contain.objects.all()
+    serializer_class = ContainSerializer
+
+class ListMaid(generics.ListCreateAPIView):
+    queryset = Maid.objects.all()
+    serializer_class = MaidSerializer
+
+class DetailMaid(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Maid.objects.all()
+    serializer_class = MaidSerializer
+
+class ListResponsible(generics.ListCreateAPIView):
+    queryset = Responsible.objects.all()
+    serializer_class = ResponsibleSerializer
+
+class DetailResponsible(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Responsible.objects.all()
+    serializer_class = ResponsibleSerializer
+
+class ListRegisteredUser(generics.ListCreateAPIView):
+    queryset = RegisteredUser.objects.all()
+    serializer_class = RegisteredUserSerializer
+
+class DetailRegisteredUser(generics.RetrieveUpdateDestroyAPIView):
+    queryset = RegisteredUser.objects.all()
+    serializer_class = RegisteredUserSerializer
+
+class ListRegister(generics.ListCreateAPIView):
+    queryset = Register.objects.all()
+    serializer_class = RegisterSerializer
+
+class DetailRegister(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Register.objects.all()
+    serializer_class = RegisterSerializer
+
+class ListMessage(generics.ListCreateAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+
+class DetailMessage(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Message.objects.all()
+    serializer_class = MessageSerializer
+
+class ListSend(generics.ListCreateAPIView):
+    queryset = Send.objects.all()
+    serializer_class = SendSerializer
+
+class DetailSend(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Send.objects.all()
+    serializer_class = SendSerializer

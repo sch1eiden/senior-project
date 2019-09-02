@@ -14,7 +14,6 @@ For Frontend
 For Backend
 1. Go to 'backend' folder
 2. Install pipenv with this command 'pip install -U pipenv'
-3. Install Django with this command 'pip install django'
 3. Run shell with this command 'pipenv shell'
 4. Install all required packages with this command 'pipenv install -r requirements.txt'
 

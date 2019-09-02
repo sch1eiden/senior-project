@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from rest_framework import generics
-
 from .models import Bin, Location, Locate, GarbageType, Contain, Maid, Responsible, RegisteredUser, Register, Message, Send
 from .serializers import BinSerializer, LocationSerializer, LocateSerializer, GarbageTypeSerializer, ContainSerializer, MaidSerializer, ResponsibleSerializer, RegisteredUserSerializer, RegisterSerializer, MessageSerializer, SendSerializer
+
+def index(request):
+    template = 'index.html'
+    return render(request, template)
 # Bin
 class ListBin(generics.ListCreateAPIView):
     queryset = Bin.objects.all()

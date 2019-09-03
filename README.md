@@ -6,6 +6,7 @@
 2.Node.js 10.16.3 (Download here https://nodejs.org/en/)
 
 3.Code Editor (This project mainly use Visual Studio Code, you can download here https://code.visualstudio.com/)
+
 3.1 For VS Code, you have to install extension as a list below
 - Django
 - Django Snippet
@@ -35,6 +36,6 @@ For Backend
 2. Install pipenv with this command 'pip install -U pipenv'
 3. Run shell with this command 'pipenv shell'
 4. Install all required packages with this command 'pipenv install -r requirements.txt'
-##
+## 
 
 Everytime you open django, you need to run 'pipenv shell' first.

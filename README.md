@@ -1,10 +1,10 @@
 "# senior-project"
 
-First SetUp
-
-Prerequisite
+## Prerequisite
 1.Python 3.7.4 x64 (Download here https://www.python.org/downloads/)
+
 2.Node.js 10.16.3 (Download here https://nodejs.org/en/)
+
 3.Code Editor (This project mainly use Visual Studio Code, you can download here https://code.visualstudio.com/)
 3.1 For VS Code, you have to install extension as a list below
 - Django

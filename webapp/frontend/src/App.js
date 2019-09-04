@@ -20,6 +20,7 @@ class App extends Component {
       <div className="App" align="center">
         <Header />
         <Side />
+        <div className="main">
         <Table striped bordered hover variant="dark">
           <thead className="thead-dark">
             <tr>
@@ -46,6 +47,7 @@ class App extends Component {
             }
           </tbody>
         </Table>
+        </div>
       </div>
     );
   }

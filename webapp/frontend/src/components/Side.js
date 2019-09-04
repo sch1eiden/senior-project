@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 class Side extends Component {
     render(){
         return (
-            <h1>SideNav</h1>
+            <div class="sidenav">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#clients">Clients</a>
+                <a href="#contact">Contact</a>
+            </div>
         );
     }
 }

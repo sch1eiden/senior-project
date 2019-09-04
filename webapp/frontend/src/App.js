@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 import Header from './components/Header';
-import Side from './components/Side';
+import SideNav from './components/SideNav';
 class App extends Component {
   state = {
     web_app: []
@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="App" align="center">
         <Header />
-        <Side />
+        <SideNav />
         <div className="main">
         <Table striped bordered hover variant="dark">
           <thead className="thead-dark">

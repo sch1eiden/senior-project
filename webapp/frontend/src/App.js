@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import SideNav from './components/SideNav';
-import Statistic from './components/Statistic';
+import Sidebar from './components/Sidebar';
+import Content from './components/Content';
 class App extends Component {
   render() {
     return (
       <div className="App" align="center">
         <Header />
-        <SideNav />
+        <Sidebar />
         <div className="main">
-          <Statistic />
+          <Content />
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
-class Content extends Component {
+class Statistic extends Component {
     state = {
         web_app: []
       };
@@ -45,4 +45,4 @@ class Content extends Component {
         );
     }
 }
-export default Content
+export default Statistic

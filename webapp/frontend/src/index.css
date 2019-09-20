@@ -52,6 +52,15 @@ code {
   padding: 0px 10px;
 }
 
+.container-fluid {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.row {
+  margin-top: 1%;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}

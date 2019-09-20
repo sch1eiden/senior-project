@@ -14,6 +14,7 @@ class Content extends Component {
       }
     render(){
         return (
+            <div id="page-wrap">
             <Table striped bordered hover variant="dark">
                 <thead className="thead-dark">
                     <tr>
@@ -40,6 +41,7 @@ class Content extends Component {
                     }
                 </tbody>
             </Table>
+            </div>
         );
     }
 }

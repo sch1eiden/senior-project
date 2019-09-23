@@ -16,7 +16,7 @@ const routing = (
     <Router>
         <div>
             <Sidebar />
-            <Header />>
+            <Header />
             <div id="page-wrap">
                 <Switch>
                     <Route exact path="/" component={App} />

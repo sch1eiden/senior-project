@@ -9,7 +9,7 @@ class Users extends Component {
         
         return (
             <div id="Users">
-              <h3>Users</h3>
+              <h3 className="display-4">Users</h3>
               {/* <strong>select a user</strong>
               <ul>
                 <li>

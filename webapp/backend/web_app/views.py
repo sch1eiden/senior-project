@@ -1,3 +1,5 @@
+import django_filters.rest_framework
+from rest_framework import filters
 from django.shortcuts import render
 from rest_framework import generics
 from .models import Bin, Location, Locate, GarbageType, Contain, Maid, Responsible, RegisteredUser, Register, Message, Send
@@ -46,6 +48,9 @@ class DetailGarbage(generics.RetrieveUpdateDestroyAPIView):
 class ListContain(generics.ListCreateAPIView):
     queryset = Contain.objects.all()
     serializer_class = ContainSerializer
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
+    ordering_fields = ['date_time_value']
+    filterset_fields = ['garbage_id']
 
 class DetailContain(generics.RetrieveUpdateDestroyAPIView):
     queryset = Contain.objects.all()

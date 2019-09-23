@@ -1,20 +1,7 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { push as Menu } from 'react-burger-menu';
-
-// export default props => {
-//     return (
-//         <Menu pageWrapId={ "page-wrap" } >
-//             <Link to="/">Home</Link>
-//             <Link to="/dashboard">Dashboard</Link>
-//             <Link to="/contact">Contact</Link>
-//         </Menu>
-//     );
-// };
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import React, {Component} from 'react';
 import { Route } from 'react-router-dom';
-import '../sidenav.css';
+import './sidebar.css';
 
 class Sidebar extends Component {
     render(){

@@ -13,10 +13,16 @@ class BinGraph extends Component {
         }
     }
     
+    componentDidUpdate(prevProps) {
+        if(this.props.statisticData !== prevProps.statisticData) {
+            this.fetchData(this.props.statisticData);
+        }
+    }
+
     componentDidMount() {
         this.getStatisticData();
     }
-
+    
     getStatisticData() {
         const glassUrl = `${API_URL}/contain/?garbage_id=1`;
         const aluminiumUrl = `${API_URL}/contain/?garbage_id=2`;
@@ -27,7 +33,7 @@ class BinGraph extends Component {
         let aluminiumDate = [];
         let paperDate = [];
         let plasticDate = [];
-
+        
         let glassAmount = [];
         let aluminiumAmount = [];
         let paperAmount = [];
@@ -126,65 +132,6 @@ class BinGraph extends Component {
                 ]
             }
         });
-        
-
-        // const url = `${API_URL}/contain/`;
-        // const garbage_url = `${API_URL}/garbage/`;
-        // let garbageType = [];
-        // axios.get(garbage_url)
-        //     .then(res => {
-        //         const garbages = res.data;
-        //         garbages.forEach(element => {
-        //             garbageType.push(element.garbage_name);
-        //         });
-        //     });
-        // axios.get(url)
-        //     .then(res => {
-        //         const bin = res.data;
-        //         let dates = [];
-        //         let amounts = [];
-        //         bin.forEach(element => {
-        //             let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
-        //             dates.push(new_date);
-        //             amounts.push(element.amount);
-        //         });
-        //         this.setState({
-        //             statisticData: {
-        //                 labels: dates,
-        //                 datasets:[
-        //                     {
-        //                         label: 'Glass',
-        //                         data: amounts,
-        //                         backgroundColor:[
-        //                             'rgba(25, 181, 254, 0.6)',                            
-        //                         ]
-        //                     },
-        //                     {
-        //                         label: 'Aluminium Can',
-        //                         data: amounts,
-        //                         backgroundColor:[
-        //                             'rgba(219, 10, 91, 0.6)',                            
-        //                         ]
-        //                     },
-        //                     {
-        //                         label: 'Paper',
-        //                         data: amounts,
-        //                         backgroundColor:[
-        //                             'rgba(245, 229, 27, 0.6)',
-        //                         ]
-        //                     },
-        //                     {
-        //                         label: 'Plastic',
-        //                         data: amounts,
-        //                         backgroundColor:[
-        //                             'rgba(27, 163, 156, 0.6)'                                
-        //                         ]
-        //                     },
-                            
-        //                 ]
-        //             }
-        //         });
-        //     });
     }
 
     render(){

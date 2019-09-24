@@ -10,21 +10,22 @@ import User from './pages/User';
 import Header from './pages/Header';
 import Notfound from './pages/notfound';
 import Sidebar from './components/sidebar';
+import './components/sidebar.css';
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
     <Router>
-        <div>
+        <div id="page-wrap">
             <Sidebar />
             <Header />
-            <div id="page-wrap">
-                <Switch>
-                    <Route exact path="/" component={App} />
-                    <Route exact path="/users" component={User} />
-                    <Route path="/contact" component={Contact} />
-                    <Route path="/dashboard" component={Dashboard} />
-                    <Route component={Notfound} />
-                </Switch>
+            <div id="main">
+            <Switch>
+                <Route exact path="/" component={App} />
+                <Route exact path="/users" component={User} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/dashboard" component={Dashboard} />
+                <Route component={Notfound} />
+            </Switch>
             </div>
         </div>
     </Router>

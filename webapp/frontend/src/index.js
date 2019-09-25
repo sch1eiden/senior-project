@@ -29,7 +29,7 @@ const routing = (
             </div>
         </div>
     </Router>
-)
+);
 
 ReactDOM.render(routing, document.getElementById('root'));
 

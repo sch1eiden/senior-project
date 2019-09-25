@@ -36,6 +36,8 @@ For Backend
 2. Install pipenv with this command 'pip install -U pipenv'
 3. Run shell with this command 'pipenv shell'
 4. Install all required packages with this command 'pipenv install -r requirements.txt'
+5. Test by run this command "pipenv shell", then "py manage.py runserver"
 ## 
 
 Everytime you open django, you need to run 'pipenv shell' first.
+You have to run backend folder first, then run frontend folder.

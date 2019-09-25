@@ -21,7 +21,7 @@ sqlparse = "==0.3.0"
 typed-ast = "==1.4.0"
 wrapt = "==1.11.2"
 Django = "==2.2.4"
-django-filter = "*"
+django-filter = "==2.2.0"
 
 [requires]
 python_version = "3.7"

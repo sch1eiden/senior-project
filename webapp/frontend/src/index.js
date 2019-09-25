@@ -9,7 +9,7 @@ import Dashboard from './pages/Dashboard';
 import User from './pages/User';
 import Header from './pages/Header';
 import Notfound from './pages/notfound';
-import Sidebar from './components/sidebar';
+import Sidebar from './components/Sidebar';
 import './components/sidebar.css';
 import * as serviceWorker from './serviceWorker';
 

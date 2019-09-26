@@ -13,6 +13,8 @@ urlpatterns = [
     path('garbage/<int:pk>/', views.DetailGarbage.as_view()),
     path('contain/', views.ListContain.as_view(), name="contain"),
     path('contain/<int:pk>/', views.DetailContain.as_view()),
+    path('level/', views.ListLevel.as_view(), name="level"),
+    path('level/<int:pk>/', views.DetailLevel.as_view()),
     path('maid/', views.ListMaid.as_view(), name="maid"),
     path('maid/<int:pk>/', views.DetailMaid.as_view()),
     path('responsible/', views.ListResponsible.as_view(), name="responsible"),

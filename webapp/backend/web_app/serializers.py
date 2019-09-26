@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Bin, Location, Locate, GarbageType, Contain, Maid, Responsible, RegisteredUser, Register, Message, Send
+from .models import Bin, Location, Locate, GarbageType, Contain, Level, Maid, Responsible, RegisteredUser, Register, Message, Send
 
 class BinSerializer(serializers.ModelSerializer):
     class Meta:
@@ -41,11 +41,19 @@ class ContainSerializer(serializers.ModelSerializer):
             'contain_id',
             'garbage_id',
             'bin_id',
-            'amount',
-            'level',
             'date_time_value',
         )
         model = Contain
+
+class LevelSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'level_id',
+            'garbage_id',
+            'level',
+            'date_time_value',
+        )
+        model = Level
 
 class MaidSerializer(serializers.ModelSerializer):
     class Meta:

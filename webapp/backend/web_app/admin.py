@@ -1,5 +1,5 @@
 from django.contrib import admin
-from web_app.models import Bin, Locate, Location, GarbageType, Contain, Maid, Responsible, RegisteredUser, Register, Message, Send
+from web_app.models import Bin, Locate, Location, GarbageType, Contain, Level, Maid, Responsible, RegisteredUser, Register, Message, Send
 # Register your models here.
 
 class PostLocate(admin.ModelAdmin):
@@ -16,8 +16,12 @@ class PostGarbageType(admin.ModelAdmin):
     list_filter = ('garbage_id', 'garbage_name')
 
 class PostContain(admin.ModelAdmin):
-    list_display = ('contain_id', 'garbage_id', 'bin_id', 'amount', 'level', 'date_time_value')
-    list_filter = ('contain_id', 'garbage_id', 'bin_id', 'amount', 'level', 'date_time_value')
+    list_display = ('contain_id', 'garbage_id', 'bin_id', 'date_time_value')
+    list_filter = ('contain_id', 'garbage_id', 'bin_id', 'date_time_value')
+
+class PostLevel(admin.ModelAdmin):
+    list_display = ('level_id', 'garbage_id', 'level', 'date_time_value')
+    list_filter = ('level_id', 'garbage_id', 'level', 'date_time_value')
 
 class PostMaid(admin.ModelAdmin):
     list_display = ('maid_id', 'maid_name', 'phone_number')
@@ -49,6 +53,7 @@ admin.site.register(Locate, PostLocate)
 admin.site.register(Location, PostLocation)
 admin.site.register(GarbageType, PostGarbageType)
 admin.site.register(Contain, PostContain)
+admin.site.register(Level, PostLevel)
 admin.site.register(Maid, PostMaid)
 admin.site.register(Responsible, PostResponsible)
 admin.site.register(RegisteredUser, PostRegisteredUser)

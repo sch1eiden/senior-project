@@ -2,8 +2,8 @@ import django_filters.rest_framework
 from rest_framework import filters
 from django.shortcuts import render
 from rest_framework import generics
-from .models import Bin, Location, Locate, GarbageType, Contain, Maid, Responsible, RegisteredUser, Register, Message, Send
-from .serializers import BinSerializer, LocationSerializer, LocateSerializer, GarbageTypeSerializer, ContainSerializer, MaidSerializer, ResponsibleSerializer, RegisteredUserSerializer, RegisterSerializer, MessageSerializer, SendSerializer
+from .models import Bin, Location, Locate, GarbageType, Contain, Level, Maid, Responsible, RegisteredUser, Register, Message, Send
+from .serializers import BinSerializer, LocationSerializer, LocateSerializer, GarbageTypeSerializer, ContainSerializer, LevelSerializer, MaidSerializer, ResponsibleSerializer, RegisteredUserSerializer, RegisterSerializer, MessageSerializer, SendSerializer
 
 def index(request):
     template = 'index.html'
@@ -55,6 +55,18 @@ class ListContain(generics.ListCreateAPIView):
 class DetailContain(generics.RetrieveUpdateDestroyAPIView):
     queryset = Contain.objects.all()
     serializer_class = ContainSerializer
+
+# Level
+class ListLevel(generics.ListCreateAPIView):
+    queryset = Level.objects.all()
+    serializer_class = LevelSerializer
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend, filters.OrderingFilter]
+    ordering_fields = ['date_time_value']
+    filterset_fields = ['garbage_id']
+
+class DetailLevel(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Level.objects.all()
+    serializer_class = LevelSerializer
 
 # Maid
 class ListMaid(generics.ListCreateAPIView):

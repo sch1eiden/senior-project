@@ -85,8 +85,6 @@ class Contain(models.Model):
     contain_id = models.PositiveIntegerField(primary_key=True)
     garbage_id = models.ForeignKey(GarbageType, on_delete=models.SET_NULL, null=True)
     bin_id = models.ForeignKey(Bin, on_delete=models.SET_NULL, null=True)
-    amount = models.PositiveIntegerField()
-    level = models.PositiveIntegerField()
     date_time_value = models.DateTimeField(auto_now=True)
 
     class Meta:
@@ -99,6 +97,24 @@ class Contain(models.Model):
         """Unicode representation of Contain."""
         return str(self.date_time_value)
 
+class Level(models.Model):
+    """Model definition for Contain."""
+
+    # TODO: Define fields here
+    level_id = models.PositiveIntegerField(primary_key=True)
+    garbage_id = models.ForeignKey(GarbageType, on_delete=models.SET_NULL, null=True)
+    level = models.PositiveIntegerField()
+    date_time_value = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        """Meta definition for Level."""
+
+        verbose_name = 'Level'
+        verbose_name_plural = 'Levels'
+
+    def __str__(self):
+        """Unicode representation of Level."""
+        return str(self.date_time_value)
 
 class Maid(models.Model):
     """Model definition for MODELNAME."""

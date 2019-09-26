@@ -17,7 +17,7 @@ class BinChart extends Component {
     }
 
     getBinData () {
-        const url = `${API_URL}/contain/?ordering=-date_time_value`;
+        const url = `${API_URL}/level/?ordering=-date_time_value`;
         const garbage_url = `${API_URL}/garbage/`;
         let garbageType = [];
         axios.get(garbage_url)

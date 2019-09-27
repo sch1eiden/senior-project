@@ -1,6 +1,6 @@
 import React from 'react';
-import BinGraph from '../components/bingraph';
-import BinChart from '../components/binchart';
+import BinGraph from '../components/binGraph';
+import BinBar from '../components/binBar';
 const Dashboard = () => {
     return (
         <div className="container-fluid" id="Dashboard">
@@ -12,7 +12,7 @@ const Dashboard = () => {
                             Bin Chart
                         </div>
                         <div className="card-body">
-                            <BinChart />
+                            <BinBar />
                         </div>
                     </div>
                 </div>

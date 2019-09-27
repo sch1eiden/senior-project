@@ -8,6 +8,7 @@ from .serializers import BinSerializer, LocationSerializer, LocateSerializer, Ga
 def index(request):
     template = 'index.html'
     return render(request, template)
+    
 # Bin
 class ListBin(generics.ListCreateAPIView):
     queryset = Bin.objects.all()

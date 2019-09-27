@@ -1,83 +1,63 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import moment from 'moment';
-import axios from 'axios';
 
 const API_URL = 'http://localhost:8000/api';
+const glass_url = `${API_URL}/contain/?garbage_id=1`;
+const aluminium_url = `${API_URL}/contain/?garbage_id=2`;
+const paper_url = `${API_URL}/contain/?garbage_id=3`;
+const plastic_url = `${API_URL}/contain/?garbage_id=4`;
 
-class BinGraph extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            statisticData: {}
-        }
-    }
-    
-    componentDidUpdate(prevProps) {
-        if(this.props.statisticData !== prevProps.statisticData) {
-            this.fetchData(this.props.statisticData);
-        }
-    }
+const BinGraph = () => {
+    const [binLine, setBinLine] = useState([]);
 
-    componentDidMount() {
-        this.getStatisticData();
-    }
-    
-    getStatisticData() {
-        const glassUrl = `${API_URL}/contain/?garbage_id=1`;
-        const aluminiumUrl = `${API_URL}/contain/?garbage_id=2`;
-        const paperUrl = `${API_URL}/contain/?garbage_id=3`;
-        const plasticUrl = `${API_URL}/contain/?garbage_id=4`;
-        
-        let glassDate = [];
-        let aluminiumDate = [];
-        let paperDate = [];
-        let plasticDate = [];
-        
-        let glassAmount = [];
-        let aluminiumAmount = [];
-        let paperAmount = [];
-        let plasticAmount = [];
+    const [glassDate, setGlassDate] = useState([]);
+    const [aluminiumDate, setAluminiumDate] = useState([]);
+    const [paperDate, setPaperDate] = useState([]);
+    const [plasticDate, setPlasticDate] = useState([]);
 
-        axios.get(glassUrl)
-            .then(res => {
-                const garbage = res.data;
-                garbage.forEach(element => {
-                    let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
-                    glassDate.push(new_date);
-                    glassAmount.push(element.amount);
-                });
+    const [glassAmount, setGlassAmount] = useState([]);
+    const [aluminiumAmount, setAluminiumAmount] = useState([]);
+    const [paperAmount, setPaperAmount] = useState([]);
+    const [plasticAmount, setPlasticAmount] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const resGlass = await axios(glass_url);
+            const resAluminium = await axios(aluminium_url);
+            const resPaper = await axios(paper_url);
+            const resPlastic = await axios(plastic_url);
+            // Glass
+            const glass = resGlass.data;
+            glass.forEach(element => {
+                let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
+                glassDate.push(new_date);
+                glassAmount.push(element.amount);
             });
-        axios.get(aluminiumUrl)
-            .then(res => {
-                const garbage = res.data;
-                garbage.forEach(element =>{
-                    let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
-                    aluminiumDate.push(new_date);
-                    aluminiumAmount.push(element.amount);
-                });
+            // Aluminium Can
+            const aluminium = resAluminium.data;
+            aluminium.forEach(element => {
+                let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
+                aluminiumDate.push(new_date);
+                aluminiumAmount.push(element.amount);
             });
-        axios.get(paperUrl)
-            .then(res => {
-                const garbage = res.data;
-                garbage.forEach(element =>{
-                    let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
-                    paperDate.push(new_date);
-                    paperAmount.push(element.amount);
-                });
+            // Paper
+            const paper = resPaper.data;
+            paper.forEach(element => {
+                let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
+                paperDate.push(new_date);
+                paperAmount.push(element.amount);
             });
-        axios.get(plasticUrl)
-            .then(res => {
-                const garbage = res.data;
-                garbage.forEach(element =>{
-                    let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
-                    plasticDate.push(new_date);
-                    plasticAmount.push(element.amount);
-                });
+            // Plastic
+            const plastic = resPlastic.data;
+            plastic.forEach(element => {
+                let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
+                plasticDate.push(new_date);
+                plasticAmount.push(element.amount);
             });
 
-        this.setState({
-            statisticData: {
+            setBinLine({
                 labels: glassDate,
                 datasets:[
                     {
@@ -130,42 +110,42 @@ class BinGraph extends Component {
                     },
                             
                 ]
-            }
-        });
+            });
+        };
+        fetchData();
+    }, []);
+
+    const options = {
+        responsive: true,
+        legend: {
+            display: true,
+        },
+        tooltips: {
+            enabled: true,
+        },
+        scales: {
+            xAxes:[{
+                ticks:{
+                    beginAtZero:true
+                },
+            }],
+            yAxes:[{
+                display:true,
+                ticks: {
+                    beginAtZero:true,
+                    suggestedMax: 100,
+                }
+            }]
+        }
     }
 
-    render(){
-        const options = {
-            responsive: true,
-            legend: {
-                display: true,
-            },
-            tooltips: {
-                enabled: true,
-            },
-            scales: {
-                xAxes:[{
-                    ticks:{
-                        beginAtZero:true
-                    },
-                }],
-                yAxes:[{
-                    display:true,
-                    ticks: {
-                        beginAtZero:true,
-                        suggestedMax: 100,
-                    }
-                }]
-            }
-        }
-        return (
-            <div>
-                <Line
-                data = {this.state.statisticData}
-                options = {options}
-                />
-            </div>
-        );
-    }
+    return (
+        <div id="BinGraph">
+            <Line
+            data = {binLine}
+            options = {options}
+            />
+        </div>
+    )
 }
-export default BinGraph
+export default BinGraph;

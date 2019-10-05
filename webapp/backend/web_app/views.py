@@ -4,10 +4,22 @@ from django.shortcuts import render
 from rest_framework import generics
 from .models import Bin, Location, Locate, GarbageType, Contain, Level, Maid, Responsible, RegisteredUser, Register, Message, Send
 from .serializers import BinSerializer, LocationSerializer, LocateSerializer, GarbageTypeSerializer, ContainSerializer, LevelSerializer, MaidSerializer, ResponsibleSerializer, RegisteredUserSerializer, RegisterSerializer, MessageSerializer, SendSerializer
+import requests
 
 def index(request):
     template = 'index.html'
     return render(request, template)
+
+def message():
+    url = 'https://notify-api.line.me/api/notify'
+    token = 'pfYLzBizOF7loAO9K38WZ9cMsvhPHewd1MNNeO9W2p8'
+    headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'Bearer '+token}
+
+    msg = 'yeahhhh boi'
+    r = requests.post(url, headers=headers, data = {'message':msg})
+
+    return r.text
+message()
     
 # Bin
 class ListBin(generics.ListCreateAPIView):

@@ -12,16 +12,6 @@ const plastic_url = `${API_URL}/contain/?garbage_id=4`;
 const BinGraph = () => {
     const [binLine, setBinLine] = useState([]);
 
-    const [glassDate, setGlassDate] = useState([]);
-    const [aluminiumDate, setAluminiumDate] = useState([]);
-    const [paperDate, setPaperDate] = useState([]);
-    const [plasticDate, setPlasticDate] = useState([]);
-
-    const [glassAmount, setGlassAmount] = useState([]);
-    const [aluminiumAmount, setAluminiumAmount] = useState([]);
-    const [paperAmount, setPaperAmount] = useState([]);
-    const [plasticAmount, setPlasticAmount] = useState([]);
-
     useEffect(() => {
         const fetchData = async () => {
             const resGlass = await axios(glass_url);
@@ -30,6 +20,8 @@ const BinGraph = () => {
             const resPlastic = await axios(plastic_url);
             // Glass
             const glass = resGlass.data;
+            const glassDate = [];
+            const glassAmount = [];
             glass.forEach(element => {
                 let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
                 glassDate.push(new_date);
@@ -37,6 +29,8 @@ const BinGraph = () => {
             });
             // Aluminium Can
             const aluminium = resAluminium.data;
+            const aluminiumDate = [];
+            const aluminiumAmount = [];
             aluminium.forEach(element => {
                 let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
                 aluminiumDate.push(new_date);
@@ -44,6 +38,8 @@ const BinGraph = () => {
             });
             // Paper
             const paper = resPaper.data;
+            const paperDate = [];
+            const paperAmount = [];
             paper.forEach(element => {
                 let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
                 paperDate.push(new_date);
@@ -51,6 +47,8 @@ const BinGraph = () => {
             });
             // Plastic
             const plastic = resPlastic.data;
+            const plasticDate = [];
+            const plasticAmount = [];
             plastic.forEach(element => {
                 let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
                 plasticDate.push(new_date);

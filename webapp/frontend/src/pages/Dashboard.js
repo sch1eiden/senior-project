@@ -9,7 +9,7 @@ const Dashboard = () => {
                 <div className="col-sm-6">
                     <div className="card">
                         <div className="card-header">
-                            Bin Chart
+                            Current Level Bar
                         </div>
                         <div className="card-body">
                             <BinBar />

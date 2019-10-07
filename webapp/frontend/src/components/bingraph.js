@@ -59,6 +59,30 @@ const BinGraph = () => {
                 labels: glassDate,
                 datasets:[
                     {
+                        label: 'Plastic',
+                        fill: false,
+                        borderColor: 'rgba(27, 163, 156, 0.6)',
+                        pointBorderColor: "black",
+                        pointBackgroundColor: 'rgba(27, 163, 156, 0.6)',
+                        lineTension: 0,
+                        data: plasticAmount,
+                        backgroundColor:[
+                            'rgba(27, 163, 156, 0.6)'                                
+                        ]
+                    },
+                    {
+                        label: 'Paper',
+                        fill: false,
+                        borderColor: 'rgba(245, 229, 27, 0.6)',
+                        pointBorderColor: "black",
+                        pointBackgroundColor: 'rgba(245, 229, 27, 0.6)',
+                        lineTension: 0,
+                        data: paperAmount,
+                        backgroundColor:[
+                            'rgba(245, 229, 27, 0.6)',
+                        ]
+                    },
+                    {
                         label: 'Glass',
                         fill: false,
                         borderColor: 'rgba(25, 181, 254, 0.6)',
@@ -82,31 +106,6 @@ const BinGraph = () => {
                             'rgba(219, 10, 91, 0.6)',                            
                         ]
                     },
-                    {
-                        label: 'Paper',
-                        fill: false,
-                        borderColor: 'rgba(245, 229, 27, 0.6)',
-                        pointBorderColor: "black",
-                        pointBackgroundColor: 'rgba(245, 229, 27, 0.6)',
-                        lineTension: 0,
-                        data: paperAmount,
-                        backgroundColor:[
-                            'rgba(245, 229, 27, 0.6)',
-                        ]
-                    },
-                    {
-                        label: 'Plastic',
-                        fill: false,
-                        borderColor: 'rgba(27, 163, 156, 0.6)',
-                        pointBorderColor: "black",
-                        pointBackgroundColor: 'rgba(27, 163, 156, 0.6)',
-                        lineTension: 0,
-                        data: plasticAmount,
-                        backgroundColor:[
-                            'rgba(27, 163, 156, 0.6)'                                
-                        ]
-                    },
-                            
                 ]
             });
         };

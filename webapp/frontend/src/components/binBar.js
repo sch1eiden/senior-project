@@ -18,6 +18,7 @@ const PLASTIC_API = 'https://firestore.googleapis.com/v1/projects/smart-bin-615e
 const BinBar = () => {
     const [binBar, setBinBar] = useState([]);
     useEffect(() => {
+
         const fetchData = async () => {
             // const resGarbage = await axios(garbage_url);
             // const resGlass = await axios(`${level_url}?garbage_id=1&ordering=-date_time_value`);
@@ -34,16 +35,16 @@ const BinBar = () => {
             const paper = resPaper.data.fields;
             const plastic = resPlastic.data.fields;
             setBinBar({
-                labels: [glass.title.stringValue, aluminium.title.stringValue, paper.title.stringValue, plastic.title.stringValue],
+                labels: [plastic.title.stringValue, paper.title.stringValue, glass.title.stringValue, aluminium.title.stringValue],
                 datasets: [
                     {
                         label: 'Bin Level',
-                        data: [glass.level.integerValue, aluminium.level.integerValue, paper.level.integerValue, plastic.level.integerValue],
+                        data: [plastic.level.integerValue, paper.level.integerValue, glass.level.integerValue, aluminium.level.integerValue],
                         backgroundColor:[
-                            'rgba(25, 181, 254, 0.6)',
-                            'rgba(219, 10, 91, 0.6)',
+                            'rgba(27, 163, 156, 0.6)',
                             'rgba(245, 229, 27, 0.6)',
-                            'rgba(27, 163, 156, 0.6)'
+                            'rgba(25, 181, 254, 0.6)',
+                            'rgba(219, 10, 91, 0.6)'
                         ],
                     }
                 ]

@@ -3,83 +3,73 @@ import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import moment from 'moment';
 
-const API_URL = 'http://localhost:8000/api';
-const glass_url = `${API_URL}/contain/?garbage_id=1`;
-const aluminium_url = `${API_URL}/contain/?garbage_id=2`;
-const paper_url = `${API_URL}/contain/?garbage_id=3`;
-const plastic_url = `${API_URL}/contain/?garbage_id=4`;
+const API_URL = 'https://firestore.googleapis.com/v1/projects/smart-bin-615ec/databases/(default)/documents/amounts';
+const GLASS_API = `${API_URL}/glass/days`;
+const ALUMINIUM_API = `${API_URL}/aluminium/days`;
+const PAPER_API = `${API_URL}/paper/days`;
+const PLASTIC_API = `${API_URL}/plastic/days`;
 
 const BinGraph = () => {
     const [binLine, setBinLine] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const resGlass = await axios(glass_url);
-            const resAluminium = await axios(aluminium_url);
-            const resPaper = await axios(paper_url);
-            const resPlastic = await axios(plastic_url);
+
+            const resGlass = await axios(GLASS_API);
+            const resAluminium = await axios(ALUMINIUM_API);
+            const resPaper = await axios(PAPER_API);
+            const resPlastic = await axios(PLASTIC_API);
+
             // Glass
-            const glass = resGlass.data;
+            const glass = resGlass.data.documents;
             const glassDate = [];
             const glassAmount = [];
             glass.forEach(element => {
-                let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
+                let new_date = moment(element.fields.date.timestampValue).format('DD/MM/YYYY');
                 glassDate.push(new_date);
-                glassAmount.push(element.amount);
+                glassAmount.push(element.fields.amount.integerValue);
             });
             // Aluminium Can
-            const aluminium = resAluminium.data;
+            const aluminium = resAluminium.data.documents;
             const aluminiumDate = [];
             const aluminiumAmount = [];
             aluminium.forEach(element => {
-                let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
+                let new_date = moment(element.fields.date.timestampValue).format('DD/MM/YYYY');
                 aluminiumDate.push(new_date);
-                aluminiumAmount.push(element.amount);
+                aluminiumAmount.push(element.fields.amount.integerValue);
             });
             // Paper
-            const paper = resPaper.data;
+            const paper = resPaper.data.documents;
             const paperDate = [];
             const paperAmount = [];
             paper.forEach(element => {
-                let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
+                let new_date = moment(element.fields.date.timestampValue).format('DD/MM/YYYY');
                 paperDate.push(new_date);
-                paperAmount.push(element.amount);
+                paperAmount.push(element.fields.amount.integerValue);
             });
             // Plastic
-            const plastic = resPlastic.data;
+            const plastic = resPlastic.data.documents;
             const plasticDate = [];
             const plasticAmount = [];
             plastic.forEach(element => {
-                let new_date = moment(element.date_time_value).format('DD/MM/YYYY');
+                let new_date = moment(element.fields.date.timestampValue).format('DD/MM/YYYY');
                 plasticDate.push(new_date);
-                plasticAmount.push(element.amount);
+                plasticAmount.push(element.fields.amount.integerValue);
             });
 
             setBinLine({
                 labels: glassDate,
                 datasets:[
                     {
-                        label: 'Plastic',
+                        label: 'Aluminium Can',
                         fill: false,
-                        borderColor: 'rgba(27, 163, 156, 0.6)',
+                        borderColor: 'rgba(219, 10, 91, 0.6)',
                         pointBorderColor: "black",
-                        pointBackgroundColor: 'rgba(27, 163, 156, 0.6)',
+                        pointBackgroundColor: 'rgba(219, 10, 91, 0.6)',
                         lineTension: 0,
-                        data: plasticAmount,
+                        data: aluminiumAmount,
                         backgroundColor:[
-                            'rgba(27, 163, 156, 0.6)'                                
-                        ]
-                    },
-                    {
-                        label: 'Paper',
-                        fill: false,
-                        borderColor: 'rgba(245, 229, 27, 0.6)',
-                        pointBorderColor: "black",
-                        pointBackgroundColor: 'rgba(245, 229, 27, 0.6)',
-                        lineTension: 0,
-                        data: paperAmount,
-                        backgroundColor:[
-                            'rgba(245, 229, 27, 0.6)',
+                            'rgba(219, 10, 91, 0.6)',                            
                         ]
                     },
                     {
@@ -95,15 +85,27 @@ const BinGraph = () => {
                         ]
                     },
                     {
-                        label: 'Aluminium Can',
+                        label: 'Paper',
                         fill: false,
-                        borderColor: 'rgba(219, 10, 91, 0.6)',
+                        borderColor: 'rgba(245, 229, 27, 0.6)',
                         pointBorderColor: "black",
-                        pointBackgroundColor: 'rgba(219, 10, 91, 0.6)',
+                        pointBackgroundColor: 'rgba(245, 229, 27, 0.6)',
                         lineTension: 0,
-                        data: aluminiumAmount,
+                        data: paperAmount,
                         backgroundColor:[
-                            'rgba(219, 10, 91, 0.6)',                            
+                            'rgba(245, 229, 27, 0.6)',
+                        ]
+                    },
+                    {
+                        label: 'Plastic',
+                        fill: false,
+                        borderColor: 'rgba(27, 163, 156, 0.6)',
+                        pointBorderColor: "black",
+                        pointBackgroundColor: 'rgba(27, 163, 156, 0.6)',
+                        lineTension: 0,
+                        data: plasticAmount,
+                        backgroundColor:[
+                            'rgba(27, 163, 156, 0.6)'                                
                         ]
                     },
                 ]

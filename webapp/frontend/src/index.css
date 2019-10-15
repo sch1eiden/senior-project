@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+}
+
 .sidenav {
   height: 100%;
   width: 160px;
@@ -49,7 +54,7 @@ code {
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  padding: 0px 0px;
 }
 
 .container-fluid {

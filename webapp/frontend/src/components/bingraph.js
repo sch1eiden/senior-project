@@ -69,7 +69,7 @@ const BinGraph = () => {
                         lineTension: 0,
                         data: aluminiumAmount,
                         backgroundColor:[
-                            'rgba(219, 10, 91, 0.6)',                            
+                            'rgba(219, 10, 91, 0.6)',
                         ]
                     },
                     {
@@ -81,7 +81,7 @@ const BinGraph = () => {
                         data: glassAmount,
                         lineTension: 0,
                         backgroundColor:[
-                            'rgba(25, 181, 254, 0.6)',                            
+                            'rgba(25, 181, 254, 0.6)',
                         ]
                     },
                     {
@@ -105,7 +105,7 @@ const BinGraph = () => {
                         lineTension: 0,
                         data: plasticAmount,
                         backgroundColor:[
-                            'rgba(27, 163, 156, 0.6)'                                
+                            'rgba(27, 163, 156, 0.6)',
                         ]
                     },
                 ]

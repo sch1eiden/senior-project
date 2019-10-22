@@ -13,7 +13,6 @@ code {
 }
 
 #page-wrap {
-  text-align: center;
   overflow: auto;
 }
 
@@ -51,21 +50,36 @@ code {
   color: white;
 }
 
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
+#Header {
+  margin-left:64px;
+}
+
+#main {
+  margin-left: 64px; /* Same as the width of the sidenav */
+  font-size: 16px; /* Increased text to enable scrolling */
   padding: 0px 0px;
 }
 
-.container-fluid {
-  padding-left: 5%;
-  padding-right: 5%;
+.display-3 {
+  text-align: center;
+}
+
+.display-4 {
+  text-align: center;
 }
 
 .row {
   margin-top: 1%;
   margin-right: 0px;
   margin-left: 0px;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card-body {
+  text-align: center;
 }
 
 @media screen and (max-height: 450px) {

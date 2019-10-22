@@ -1,20 +1,31 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {AuthContext} from '../Auth';
 
 const Contact = (props) => {
-    const onSubmit = () =>  {
-        props.history.push('/')
-    };
-
+    const {currentUser} = useContext(AuthContext);
+    const handleOnLogIn = () => {
+        props.history.push('/login');
+    }
+    const handleOnSignUp = () => {
+        props.history.push('/signup');
+    }
+    if(currentUser) {
         return (
-            <div id="Contact">
+            <div id="Contact" className="container-fluid">
                 <h3 className="display-4">Contact</h3>
-                <form>
-                    <input placeholder="name" type="name" />
-                    <input placeholder="email" type="email" />
-                    <button onClick={onSubmit}>Submit</button>
-                </form>
             </div>
         );
+    } else {
+        return (
+            <div className="container-fluid" id="Contact" align="center">
+                <h3 className="display-4">Contact</h3>
+                <p align="center">You didn't sign in yet</p>
+                <button className="btn btn-primary" onClick={handleOnLogIn}>Sign In</button>
+                <p align="center">Didn't have account yet?</p>
+                <button className="btn btn-secondary" onClick={handleOnSignUp}>Sign Up</button>
+            </div>
+        );
+    }
 
 }
 export default Contact

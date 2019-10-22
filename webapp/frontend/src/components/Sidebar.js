@@ -1,9 +1,13 @@
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Auth';
+import config from '../firebase';
 import { Route } from 'react-router-dom';
 import './sidebar.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 const Sidebar = () => {
+    const { currentUser } = useContext(AuthContext);
     return (
         <Route render={({ location, history }) => (
             <React.Fragment>
@@ -16,7 +20,7 @@ const Sidebar = () => {
                     }}
                 >
                     <Toggle />
-                    <Nav defaultSelected="home">
+                    <Nav defaultSelected="">
                         <NavItem eventKey="">
                             <NavIcon>
                                 <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
@@ -41,14 +45,35 @@ const Sidebar = () => {
                                 Contact
                             </NavText>
                         </NavItem>
-                        <NavItem eventKey="users">
+                        <NavItem eventKey="profile">
                             <NavIcon>
                                 <i className="fa fa-fw fa-user" style={{ fontSize: '1.75em' }} />
                             </NavIcon>
                             <NavText>
-                                Users
+                                Profile
                             </NavText>
                         </NavItem>
+                        {currentUser ? (
+                            <NavItem onClick={() => {config.auth().signOut()}} eventkey="">
+                                <NavIcon>
+                                    <i className="fa fa-fw fa-sign-out" style={{ fontSize: '1.75em' }} />
+                                </NavIcon>
+                                <NavText>
+                                    Sign Out
+                                </NavText>
+                            </NavItem>
+                            
+                        ) : (
+                            <NavItem eventKey="login">
+                                <NavIcon>
+                                    <i className="fa fa-fw fa-sign-in" style={{ fontSize: '1.75em' }} />
+                                </NavIcon>
+                                <NavText>
+                                    Sign In
+                                </NavText>
+                            </NavItem>
+                        )}
+                        
                     </Nav>
                 </SideNav>
             </React.Fragment>
@@ -57,3 +82,20 @@ const Sidebar = () => {
     );
 };
 export default Sidebar
+
+// <NavItem eventKey="login">
+//                             <NavIcon>
+//                                 <i className="fa fa-fw fa-sign-in" style={{ fontSize: '1.75em' }} />
+//                             </NavIcon>
+//                             <NavText>
+//                                 Sign In
+//                             </NavText>
+//                         </NavItem>
+//                         <NavItem eventKey="signup">
+//                             <NavIcon>
+//                                 <i className="fa fa-fw fa-plus" style={{ fontSize: '1.75em' }} />
+//                             </NavIcon>
+//                             <NavText>
+//                                 Sign Up
+//                             </NavText>
+//                         </NavItem>

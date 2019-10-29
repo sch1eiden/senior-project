@@ -1,15 +1,31 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import {AuthContext} from '../Auth';
-import Popup from 'reactjs-popup';
 
 const Users = (props) => {
   const {currentUser} = useContext(AuthContext);
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [phoneNumber, setPhoneNumber] = useState('');
+  // const [photoURL, setPhotoURL] = useState('');
+
+  // const handleUpdateProfile = () => {
+  //   const user = config.auth().currentUser;
+  //   user.updateProfile({
+  //     displayName: name,
+  //     photoURL: photoURL,
+  //   }).then(() => {
+  //     alert()
+  //   })
+  // }
+  
   const handleOnLogIn = () => {
       props.history.push('/login');
   }
   const handleOnSignUp = () => {
       props.history.push('/signup');
   }
+
+
 
   if (currentUser) {
     return (
@@ -18,6 +34,14 @@ const Users = (props) => {
             <h3 className="display-4" align="center">Profile</h3>
             <div className="row">
               <div className="col-sm-6">
+                <h5>Picture</h5>
+                {currentUser.photoURL ? (
+                  <img src={currentUser.photoURL} className="img-fluid" alt="responsive" />
+                ) : (
+                  <p>You didn't add your photo yet</p>
+                )}
+              </div>
+              <div className="col-sm-6">
                 <h5>Name</h5>
                 {currentUser.displayName ? (
                   <p>{currentUser.displayName}</p>
@@ -25,27 +49,19 @@ const Users = (props) => {
                   <p>You didn't add your name yet</p>
                 )}
               </div>
-              <div className="col-sm-6">
-              <h5>Email</h5>
-                <p>{currentUser.email}</p>
-              </div>
             </div>
             <div className="row">
               <div className="col-sm-6">
-              <h5>Phone Number</h5>
-              {currentUser.phoneNumber ? (
-                <p>{currentUser.phoneNumber}</p>
-              ) : (
-                <p>You didn't add your phone number yet</p>
-              )}
+                <h5>Phone Number</h5>
+                {currentUser.phoneNumber ? (
+                  <p>{currentUser.phoneNumber}</p>
+                ) : (
+                  <p>You didn't add your phone number yet</p>
+                )}
               </div>
               <div className="col-sm-6">
-              <h5>Picture</h5>
-              {currentUser.photoURL ? (
-                <img src={currentUser.photoURL} className="img-fluid img-thumbnail" alt="Responsive" />
-              ) : (
-                <p>You didn't add your photo yet</p>
-              )}
+              <h5>Email</h5>
+                <p>{currentUser.email}</p>
               </div>
             </div>
           </div>

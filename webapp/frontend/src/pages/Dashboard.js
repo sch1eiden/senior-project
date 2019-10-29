@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {AuthContext} from '../Auth';
 import BinBar from '../components/binBar';
 import BinGraph from '../components/binGraph';
+
 const Dashboard = (props) => {
     const {currentUser} = useContext(AuthContext);
     const handleOnLogIn = () => {

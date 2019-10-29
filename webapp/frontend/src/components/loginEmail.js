@@ -22,8 +22,6 @@ const LogInEmail = ({ history }) => {
     const { currentUser } = useContext(AuthContext);
         
     if (currentUser) {
-        console.log('photoUrl', currentUser.photoUrl)
-        console.log('currentUser', currentUser)
         return <Redirect to="/" />
     }
 

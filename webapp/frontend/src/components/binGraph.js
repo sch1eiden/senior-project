@@ -62,13 +62,13 @@ const BinGraph = () => {
                 {
                     label: 'Aluminium Can',
                     fill: false,
-                    borderColor: 'rgba(219, 10, 91, 0.6)',
+                    borderColor: 'rgba(132, 135, 137, 0.6)',
                     pointBorderColor: "black",
-                    pointBackgroundColor: 'rgba(219, 10, 91, 0.6)',
+                    pointBackgroundColor: 'rgba(132, 135, 137, 0.6)',
                     lineTension: 0,
                     data: aluminiumAmount,
                     backgroundColor:[
-                        'rgba(219, 10, 91, 0.6)',
+                        'rgba(132, 135, 137, 0.6)',
                     ]
                 },
                 {
@@ -117,6 +117,8 @@ const BinGraph = () => {
 
     const options = {
         responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 2,
         legend: {
             display: true,
         },

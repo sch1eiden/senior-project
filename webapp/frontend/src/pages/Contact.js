@@ -1,18 +1,44 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {AuthContext} from '../Auth';
+import firebase from '../firebase';
+
+const db = firebase.firestore();
 
 const Contact = (props) => {
     const {currentUser} = useContext(AuthContext);
+    let maidData = []
+    // let maidNames = []
+    const getData = async () => {
+        // await db.collection("contacts").where("type", "==", "maid").get().then((querySnapshot) => {
+        //     querySnapshot.forEach((doc) => {
+        //         maidData.push(doc.data());
+        //         maidNames.push(doc.data().name);
+        //     })
+        // })
+        await db.collection("contacts").where("type", "==", "maid").get().then(querySnapshot => {
+            maidData = querySnapshot.docs.map(doc => doc.data());
+        })
+        console.log('maidData', maidData)
+    }
+
+    useEffect(() => {
+        getData();
+    })
+    
+    
+
     const handleOnLogIn = () => {
         props.history.push('/login');
     }
     const handleOnSignUp = () => {
         props.history.push('/signup');
     }
+
     if(currentUser) {
         return (
             <div id="Contact" className="container-fluid">
                 <h3 className="display-4">Contact</h3>
+                
             </div>
         );
     } else {

@@ -23,7 +23,7 @@ const BinGraph = () => {
             for(let i=0; i<7; i++) {
                 daysAgo[i] = moment().subtract(i, 'days').format("DD/MM/YYYY");
             }
-            console.log('daysAgo', daysAgo)
+
             const data = {};
             let aluminium = {};
             let glass = {};
@@ -82,10 +82,9 @@ const BinGraph = () => {
                     "aluAmount": aluAmount,
                     "glassAmount": glassAmount,
                     "paperAmount": paperAmount,
-                    "plasticAmount": paperAmount,
+                    "plasticAmount": plasticAmount,
                 })
             }
-            console.log('final', final)
             setBinLine({
                 labels: [final[6].date, final[5].date, final[4].date, final[3].date, final[2].date, final[1].date, final[0].date],
                 datasets:[
@@ -132,7 +131,7 @@ const BinGraph = () => {
                         pointBorderColor: "black",
                         pointBackgroundColor: 'rgba(27, 163, 156, 0.6)',
                         lineTension: 0,
-                        data: [final[6].plasticAmount, final[5].plasticAmount, final[4].plasticAmount, final[3].plasticAmount, final[2].plasticAmount, final[1].plasticAmount, final[0].plasticAmount,],
+                        data: [final[6].plasticAmount, final[5].plasticAmount, final[4].plasticAmount, final[3].plasticAmount, final[2].plasticAmount, final[1].plasticAmount, final[0].plasticAmount],
                         backgroundColor:[
                             'rgba(27, 163, 156, 0.6)',
                         ]

@@ -68,7 +68,6 @@ const Users = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('provider data', currentUser.providerData)
     if (displayName) {
       currentUser.updateProfile({
         displayName: displayName,
@@ -91,8 +90,7 @@ const Users = (props) => {
     //   })
     // }
 
-
-    props.history.push('/profile');
+    window.location.reload();
   }
 
   // const reauthenticate = (currentPassword) => {

@@ -20,7 +20,6 @@ const BinBar = () => {
             })
             setLevel(level);
             setTitle(title);
-            console.log('level', level)
             const ctx = document.getElementById('canvas').getContext("2d");
 
             let gradientAlu = ctx.createLinearGradient(0, 0, 0, 400);

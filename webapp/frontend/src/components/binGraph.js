@@ -91,49 +91,49 @@ const BinGraph = () => {
                     {
                         label: 'Aluminium Can',
                         fill: false,
-                        borderColor: 'rgba(249, 105, 14, 0.6)',
+                        borderColor: 'rgba(255, 80, 80, 0.8)',
                         pointBorderColor: "black",
-                        pointBackgroundColor: 'rgba(249, 105, 14, 0.6)',
+                        pointBackgroundColor: 'rgba(255, 80, 80, 0.8)',
                         lineTension: 0,
                         data: [final[6].aluAmount, final[5].aluAmount, final[4].aluAmount, final[3].aluAmount, final[2].aluAmount, final[1].aluAmount, final[0].aluAmount],
                         backgroundColor:[
-                            'rgba(249, 105, 14, 0.6)',
+                            'rgba(255, 80, 80, 0.8)',
                         ]
                     },
                     {
                         label: 'Glass',
                         fill: false,
-                        borderColor: 'rgba(25, 181, 254, 0.6)',
+                        borderColor: 'rgba(255, 255, 80, 0.8)',
                         pointBorderColor: "black",
-                        pointBackgroundColor: 'rgba(25, 181, 254, 0.6)',
+                        pointBackgroundColor: 'rgba(255, 255, 80, 0.8)',
                         data: [final[6].glassAmount, final[5].glassAmount, final[4].glassAmount, final[3].glassAmount, final[2].glassAmount, final[1].glassAmount, final[0].glassAmount],
                         lineTension: 0,
                         backgroundColor:[
-                            'rgba(25, 181, 254, 0.6)',
+                            'rgba(255, 255, 80, 0.8)',
                         ]
                     },
                     {
                         label: 'Paper',
                         fill: false,
-                        borderColor: 'rgba(245, 229, 27, 0.6)',
+                        borderColor: 'rgba(80, 255, 80, 0.8)',
                         pointBorderColor: "black",
-                        pointBackgroundColor: 'rgba(245, 229, 27, 0.6)',
+                        pointBackgroundColor: 'rgba(80, 255, 80, 0.8)',
                         lineTension: 0,
                         data: [final[6].paperAmount, final[5].paperAmount, final[4].paperAmount, final[3].paperAmount, final[2].paperAmount, final[1].paperAmount, final[0].paperAmount],
                         backgroundColor:[
-                            'rgba(245, 229, 27, 0.6)',
+                            'rgba(80, 255, 80, 0.8)',
                         ]
                     },
                     {
                         label: 'Plastic',
                         fill: false,
-                        borderColor: 'rgba(27, 163, 156, 0.6)',
+                        borderColor: 'rgba(80, 80, 255, 0.8)',
                         pointBorderColor: "black",
-                        pointBackgroundColor: 'rgba(27, 163, 156, 0.6)',
+                        pointBackgroundColor: 'rgba(80, 80, 255, 0.8)',
                         lineTension: 0,
                         data: [final[6].plasticAmount, final[5].plasticAmount, final[4].plasticAmount, final[3].plasticAmount, final[2].plasticAmount, final[1].plasticAmount, final[0].plasticAmount],
                         backgroundColor:[
-                            'rgba(27, 163, 156, 0.6)',
+                            'rgba(80, 80, 255, 0.8)',
                         ]
                     },
                 ]

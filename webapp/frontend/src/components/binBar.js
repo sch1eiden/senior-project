@@ -23,23 +23,23 @@ const BinBar = () => {
             const ctx = document.getElementById('canvas').getContext("2d");
 
             let gradientAlu = ctx.createLinearGradient(0, 0, 0, 400);
-            gradientAlu.addColorStop(1, 'rgba(249, 105, 14, 0.6)');
-            gradientAlu.addColorStop(0.5, 'rgba(249, 105, 14, 0.6)');
+            gradientAlu.addColorStop(1, 'rgba(255, 80, 80, 0.8)');
+            gradientAlu.addColorStop(0.5, 'rgba(255, 80, 80, 0.8)');
             gradientAlu.addColorStop(0, 'rgba(219, 10, 91, 1)');
 
             let gradientGlass = ctx.createLinearGradient(0, 0, 0, 400);
-            gradientGlass.addColorStop(1, 'rgba(25, 181, 254, 0.6)');
-            gradientGlass.addColorStop(0.5, 'rgba(25, 181, 254, 0.6)');
+            gradientGlass.addColorStop(1, 'rgba(255, 255, 80, 0.8)');
+            gradientGlass.addColorStop(0.5, 'rgba(255, 255, 80, 0.8)');
             gradientGlass.addColorStop(0, 'rgba(219, 10, 91, 1)');
 
             let gradientPaper = ctx.createLinearGradient(0, 0, 0, 400);
-            gradientPaper.addColorStop(1, 'rgba(245, 229, 27, 0.6)');
-            gradientPaper.addColorStop(0.5, 'rgba(245, 229, 27, 0.6)');
+            gradientPaper.addColorStop(1, 'rgba(80, 255, 80, 0.8)');
+            gradientPaper.addColorStop(0.5, 'rgba(80, 255, 80, 0.8)');
             gradientPaper.addColorStop(0, 'rgba(219, 10, 91, 1)');
             
             let gradientPlastic = ctx.createLinearGradient(0, 0, 0, 400);
-            gradientPlastic.addColorStop(1, 'rgba(27, 163, 156, 0.6)');
-            gradientPlastic.addColorStop(0.5, 'rgba(27, 163, 156, 0.6)');
+            gradientPlastic.addColorStop(1, 'rgba(80, 80, 255, 0.8)');
+            gradientPlastic.addColorStop(0.5, 'rgba(80, 80, 255, 0.8)');
             gradientPlastic.addColorStop(0, 'rgba(219, 10, 91, 1)');
             setBinBar({
                 labels: [title.aluminium, title.glass, title.paper, title.plastic],

@@ -24,14 +24,35 @@ const BinGraph = () => {
                 daysAgo[i] = moment().subtract(i, 'days').format("DD/MM/YYYY");
             }
 
-            const data = {};
+            let daysAfter = [];
+            for (let i=0; i<7; i++){
+                daysAfter[i] = moment().subtract(i+7, 'days').format("DD/MM/YYYY");
+            }
+
+            let data = [];
+            ss.forEach(document => {
+                data.push({
+                    "docId": document.id,
+                    "id": document.data().id,
+                    "date": moment(document.data().date.toDate()).format("DD/MM/YYYY"),
+                })
+            })
+
             let aluminium = {};
             let glass = {};
             let paper = {};
             let plastic = {};
-            ss.forEach(document => {
-                data[document.id] = document.data();
-            })
+
+            for (let i=0; i<daysAfter.length; i++){
+                let unused = _.filter(data, {'date': daysAfter[i]});
+                if(unused.length !== 0){
+                    unused.forEach(item => {
+                        db.collection('deposits').doc(item.docId).delete();
+                    })
+                }
+                
+            }
+
             setData(data);
             aluminium = _.filter(data, {'id': 0});
             setAluminium(aluminium);
@@ -42,22 +63,6 @@ const BinGraph = () => {
             plastic = _.filter(data, {'id': 3});
             setPlastic(plastic);
 
-            aluminium.forEach(item => {
-                let dateAlu = moment(item.date.toDate()).format("DD/MM/YYYY");
-                item.date = dateAlu;
-            })
-            glass.forEach(item => {
-                let dateGlass = moment(item.date.toDate()).format("DD/MM/YYYY");
-                item.date = dateGlass;
-            })
-            paper.forEach(item => {
-                let datePaper = moment(item.date.toDate()).format("DD/MM/YYYY");
-                item.date = datePaper;
-            })
-            plastic.forEach(item => {
-                let datePlastic = moment(item.date.toDate()).format("DD/MM/YYYY");
-                item.date = datePlastic;
-            })
             let aluAmount = 0;
             let glassAmount = 0;
             let paperAmount = 0;
@@ -85,6 +90,7 @@ const BinGraph = () => {
                     "plasticAmount": plasticAmount,
                 })
             }
+
             setBinLine({
                 labels: [final[6].date, final[5].date, final[4].date, final[3].date, final[2].date, final[1].date, final[0].date],
                 datasets:[

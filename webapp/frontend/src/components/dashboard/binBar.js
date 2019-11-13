@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
-import config from '../firebase';
+import config from '../../firebase';
+import { withTranslation } from 'react-i18next';
 
 const db = config.firestore();
 
-const BinBar = () => {
+const BinBar = ({t}) => {
     const [binBar, setBinBar] = useState([]);
     /* eslint-disable */
     const [level, setLevel] = useState({});
@@ -42,7 +43,7 @@ const BinBar = () => {
             gradientPlastic.addColorStop(0.5, 'rgba(80, 80, 255, 0.8)');
             gradientPlastic.addColorStop(0, 'rgba(219, 10, 91, 1)');
             setBinBar({
-                labels: [title.aluminium, title.glass, title.paper, title.plastic],
+                labels: [t('aluminum'), t('glass'), t('paper'), t('plastic')],
                 datasets: [
                     {
                         label: 'Bin Level',
@@ -98,4 +99,4 @@ const BinBar = () => {
         </div>
     );
 }
-export default BinBar
+export default withTranslation()(BinBar);

@@ -17,14 +17,13 @@ code {
   overflow: auto;
 }
 
-#Header {
-  margin-left:0px;
-}
-
 #main {
   margin-left: 0px; /* Same as the width of the sidenav */
+  margin-top: 2.5rem;
+  margin-bottom: 0rem;
   font-size: 16px; /* Increased text to enable scrolling */
   padding: 0px 0px;
+  min-height: 100vh;
 }
 
 .display-3 {
@@ -41,10 +40,32 @@ code {
   margin-left: 0px;
 }
 
-.card-header {
-  text-align: center;
+#Dashboard {
+  margin-top:5%;
 }
 
-.card-body {
-  text-align: center;
+#Contact {
+  margin-top:5%;
+}
+
+@media only screen and (max-width: 812px) {
+  #main {
+    margin-left: 0px; /* Same as the width of the sidenav */
+    margin-top: 3.5rem;
+    margin-bottom: 0rem;
+    font-size: 16px; /* Increased text to enable scrolling */
+    padding: 0px 0px;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #main {
+    margin-left: 0px; /* Same as the width of the sidenav */
+    margin-top: 8.5rem;
+    margin-bottom: 0rem;
+    font-size: 16px; /* Increased text to enable scrolling */
+    padding: 0px 0px;
+    min-height: 100vh;
+  }
 }

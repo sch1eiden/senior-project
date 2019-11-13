@@ -1,0 +1,43 @@
+
+{
+    "welcome": "Welcome",
+    "dashboard": "Dashboard",
+    "home":"Home",
+    "contact":"Contact",
+
+    "level":"Current Garbage Level",
+    "levelContent":"This bar chart will show the level of each bin type in real time. If it's almost full, it'll send a message to maids by Line to take care of.",
+    "statistic":"Statistic",
+    "statisticContent":"This line chart will show statistic of garbage amount by each type each day, tracking to last 7 days for analyze the data. For example, what garbage type they put in the most, so they can find suitable management for the future.",
+    "aluminum":"Aluminum Can",
+    "glass":"Glass",
+    "paper":"Paper",
+    "plastic":"Plastic",
+
+    "intro":"Welcome",
+    "introContent":"This Prototype of Smart Bin Garbage Sorting is a project created senior student from Computer Science at School of Information Technology, KMUTT 2019",
+
+    "content":"content",
+    "ref":"Reference: ",
+
+    "binGarbage":"Garbage Problem",
+    "binContent":"Pollution from garbage has been a well-known problem for many years, and it is still becoming a problem in many other countries. Pollution from garbage can cause respiratory diseases and have other health effects as contaminants are absorbed from the lungs into other parts of the body. Garbage segregation is an important task because it makes it easier to recycle garbage. Garbage segregation is the key to less landfill garbage that is not only a problem for the environment but also nearby inhabitants.",
+
+    "manage":"Waste Management",
+    "manageContent":"There are methods to managing waste, such as Waste hierarchy, Life-cycle of a product, Resource efficiency, and Polluter-pays principle. The method we used is Waste hierarchy, which refers to 3 Rs reduce, reuse, and recycle. Each type of waste have different ways to manage. That's why we need to separate it first. Our project will separate 4 types of waste consist of aluminum can, glass, paper, and plastic",
+
+    "cnn":"Convulotional Neural Network",
+    "cnnContent":"Content",
+
+    "sensor": "Sensor",
+    "sensorContent": "Content",
+
+    "aiewName": "Tanapat Phetkamnoet",
+    "aiewRole": "Mechanic Master",
+
+    "jokerName": "Narongrit Rodphroboon",
+    "jokerRole": "Web Master",
+
+    "tigerName": "Saran Chalermrungroj",
+    "tigerRole": "Machine Learning Master"
+}

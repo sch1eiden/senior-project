@@ -1,0 +1,29 @@
+#overlay-intro {
+    position: relative;
+    margin-top: -5%;
+    margin-left: 40%;
+    margin-bottom: 1%;
+    width: 50%;
+    height: 50%;
+}
+@media only screen and (max-width: 812px) {
+    #overlay-intro {
+        position: relative;
+        margin-top: -15%;
+        margin-left: 40%;
+        margin-bottom: 1%;
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #overlay-intro {
+        position: relative;
+        margin-top: -10%;
+        margin-left: 0%;
+        margin-bottom: 1%;
+        width: 100%;
+        height: 50%;
+    }
+}

@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import moment from 'moment';
-import config from '../firebase';
+import config from '../../firebase';
 import _ from 'lodash';
+import { withTranslation } from 'react-i18next';
 
 const db = config.firestore();
 
-const BinGraph = () => {
+const BinGraph = ({t}) => {
     
     const [binLine, setBinLine] = useState([]);
 
@@ -38,7 +39,7 @@ const BinGraph = () => {
                 })
             })
 
-            let aluminium = {};
+            let aluminum = {};
             let glass = {};
             let paper = {};
             let plastic = {};
@@ -54,8 +55,8 @@ const BinGraph = () => {
             }
 
             setData(data);
-            aluminium = _.filter(data, {'id': 0});
-            setAluminium(aluminium);
+            aluminum = _.filter(data, {'id': 0});
+            setAluminium(aluminum);
             glass = _.filter(data, {'id': 1});
             setGlass(glass);
             paper = _.filter(data, {'id': 2});
@@ -74,7 +75,7 @@ const BinGraph = () => {
             let finalPlastic;
 
             for (let i = 0; i < daysAgo.length; i++){
-                finalAlu = _.filter(aluminium, {"date": daysAgo[i]});
+                finalAlu = _.filter(aluminum, {"date": daysAgo[i]});
                 aluAmount = finalAlu.length;
                 finalGlass = _.filter(glass, {"date": daysAgo[i]});
                 glassAmount = finalGlass.length;
@@ -90,12 +91,15 @@ const BinGraph = () => {
                     "plasticAmount": plasticAmount,
                 })
             }
-
+            // Aluminium red
+            // Glass Yellow
+            // Paper Green
+            // Plastic BLue
             setBinLine({
                 labels: [final[6].date, final[5].date, final[4].date, final[3].date, final[2].date, final[1].date, final[0].date],
                 datasets:[
                     {
-                        label: 'Aluminium Can',
+                        label: t('aluminum'),
                         fill: false,
                         borderColor: 'rgba(255, 80, 80, 0.8)',
                         pointBorderColor: "black",
@@ -107,7 +111,7 @@ const BinGraph = () => {
                         ]
                     },
                     {
-                        label: 'Glass',
+                        label: t('glass'),
                         fill: false,
                         borderColor: 'rgba(255, 255, 80, 0.8)',
                         pointBorderColor: "black",
@@ -119,7 +123,7 @@ const BinGraph = () => {
                         ]
                     },
                     {
-                        label: 'Paper',
+                        label: t('paper'),
                         fill: false,
                         borderColor: 'rgba(80, 255, 80, 0.8)',
                         pointBorderColor: "black",
@@ -131,7 +135,7 @@ const BinGraph = () => {
                         ]
                     },
                     {
-                        label: 'Plastic',
+                        label: t('plastic'),
                         fill: false,
                         borderColor: 'rgba(80, 80, 255, 0.8)',
                         pointBorderColor: "black",
@@ -186,4 +190,4 @@ const BinGraph = () => {
         </div>
     )
 }
-export default BinGraph;
+export default withTranslation()(BinGraph);

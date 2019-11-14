@@ -1,7 +1,7 @@
 import React from 'react';
 import {withTranslation} from 'react-i18next';
 import Fade from 'react-reveal/Fade';
-
+import './css/contact.css'
 const Contact = ({t}) => {
     return (
         <div id="Contact" className="container-fluid">
@@ -9,7 +9,7 @@ const Contact = ({t}) => {
             <div className="row">
                 <div className="col-sm-4">
                     <Fade left>
-                        <div className="card text-center border-primary bg-light">
+                        <div id="contact-card" className="card text-center border-primary bg-light">
                             <img src={require('./img/13131744_701899836616304_1323764539879205741_o.jpg')} style={{width:'100%'}} className="card-img-top" alt="responsive" />
                             <div className="card-body">
                                 <h5 className="card-title text-primary">{t('jokerName')}</h5>
@@ -22,7 +22,7 @@ const Contact = ({t}) => {
                 </div>
                 <div className="col-sm-4">
                     <Fade bottom>
-                        <div className="card text-center border-warning bg-light">
+                        <div id="contact-card" className="card text-center border-warning bg-light">
                             <img src={require('./img/76676824_572888883483667_2443523636200472576_n.jpg')} style={{width:'100%'}} className="card-img-top" alt="responsive" />
                             <div className="card-body">
                                 <h5 className="card-title text-warning">{t('tigerName')}</h5>
@@ -35,7 +35,7 @@ const Contact = ({t}) => {
                 </div>
                 <div className="col-sm-4">
                     <Fade right>
-                        <div className="card text-center border-danger bg-light">
+                        <div id="contact-card" className="card text-center border-danger bg-light">
                             <img src={require('./img/18740061_1665367550170283_2750234411662113502_n.jpg')} style={{width:'100%'}} className="card-img-top" alt="responsive" />
                             <div className="card-body">
                                 <h5 className="card-title text-danger">{t('aiewName')}</h5>

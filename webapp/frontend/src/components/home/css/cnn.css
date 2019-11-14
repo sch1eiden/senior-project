@@ -10,8 +10,21 @@
 #overlay-cnn-img {
     position: relative;
     margin-top: -30%;
-    margin-right: 0%;
     margin-left: 60%;
+    width:30%;
+    height:30%;
+}
+#overlay-cnn1 {
+    position: relative;
+    margin-top: -40%;
+    margin-bottom: 1%;
+    width: 50%;
+    height: 50%;
+}
+
+#overlay-cnn-img1 {
+    position: relative;
+    margin-top: -35%;
     width:30%;
     height:30%;
 }
@@ -19,7 +32,7 @@
 @media only screen and (max-width: 812px) {
     #overlay-cnn {
         position: relative;
-        margin-top: -40%;
+        margin-top: -43%;
         margin-left: 2%;
         margin-bottom: 1%;
         width: 50%;
@@ -28,10 +41,23 @@
     #overlay-cnn-img {
         position: relative;
         margin-top: -40%;
-        margin-right: 0%;
         margin-left: 60%;
         width:50%;
         height:50%;
+    }
+    #overlay-cnn1 {
+        position: relative;
+        margin-top: -40%;
+        margin-bottom: 1%;
+        width: 50%;
+        height: 50%;
+    }
+    
+    #overlay-cnn-img1 {
+        position: relative;
+        margin-top: -35%;
+        width:30%;
+        height:30%;
     }
 }
 
@@ -39,17 +65,30 @@
     #overlay-cnn {
         position: relative;
         margin-top: -10%;
-        margin-left: 0%;
         margin-bottom: 1%;
+        margin-left:0%;
         width: 100%;
-        height: 50%;
+        height: 100%;
     }
     #overlay-cnn-img {
         position: relative;
-        margin-top: -75%;
-        margin-right: auto;
-        margin-left:auto;
-        width:70%;
-        height:70%;
+        margin-top: -35%;
+        margin-left: 30%;
+        width:100%;
+        height:100%;
+    }
+    #overlay-cnn1 {
+        position: relative;
+        margin-top: -5%;
+        margin-bottom: 1%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #overlay-cnn-img1 {
+        position: relative;
+        margin-top: -40%;
+        width:100%;
+        height:100%;
     }
 }

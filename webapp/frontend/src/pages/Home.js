@@ -11,7 +11,7 @@ const Home = ({t}) => {
   return (
     <div>
       <div className="row">
-        <div className="col-sm-12">
+        <div className="container-fluid">
           <Intro />
         </div>
         <div className="container-fluid">

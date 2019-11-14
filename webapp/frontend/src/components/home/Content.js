@@ -10,8 +10,8 @@ const Content = ({t}) => {
                 <div className="col-sm-12">
                     <Fade bottom>
                         <div id="overlay-content">
-                            <div className="card bg-primary">
-                                <div className="card-header text-light">
+                            <div className="card bg-light">
+                                <div className="card-header">
                                     <h1 className="card-title" align="center">{t('content')}</h1>
                                 </div>
                                 <div className="card-body text-center">

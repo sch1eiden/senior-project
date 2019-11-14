@@ -5,10 +5,10 @@ import './css/intro.css'
 const Intro = ({t}) => {
     return (
         <section>
-            <div className="row">
+            <div className="row" id="Intro">
                 <div className="col-sm-12">
                     <Fade bottom>
-                        <div id="Intro" className="block">
+                        <div id="overlay-intro-img" className="block">
                             <img src={require('./img/rubbish-3378624_1280.jpg')} className="img-fluid hero banner" alt="responsive" width="100%" style={{position:'relative'}} />
                         </div>
                     </Fade>

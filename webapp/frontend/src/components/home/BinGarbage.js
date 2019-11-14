@@ -19,7 +19,7 @@ const BinGarbage = ({t}) => {
                         </div>
                     </Fade>
                 </div>
-                <div id="overlay-bin-img" className="col-sm-6">
+                <div id="overlay-bin-img" className="col-sm-6 text-center">
                     <Fade right>
                         <img src={require('./img/00india-trash-1-articleLarge.jpg')} className="img" alt="responsive" width="100%" style={{position:'relative'}} />
                     </Fade>

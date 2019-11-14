@@ -20,10 +20,14 @@
 @media only screen and (max-width: 400px) {
     #overlay-intro {
         position: relative;
-        margin-top: -10%;
+        margin-top: 0%;
         margin-left: 0%;
         margin-bottom: 1%;
         width: 100%;
         height: 50%;
+    }
+    #overlay-intro-img {
+        position: relative;
+        margin-top: 23%;
     }
 }

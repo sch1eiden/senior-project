@@ -16,7 +16,7 @@ const Amount = ({t}) => {
                         </div>
                     </Fade>
                 </div>
-                <div className="col-sm-6">
+                <div id="BinGraph" className="col-sm-6">
                     <Fade right>
                         <BinGraph />
                     </Fade>

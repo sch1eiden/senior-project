@@ -27,10 +27,15 @@
     "manageContent":"There are methods to managing waste, such as Waste hierarchy, Life-cycle of a product, Resource efficiency, and Polluter-pays principle. The method we used is Waste hierarchy, which refers to 3 Rs reduce, reuse, and recycle. Each type of waste have different ways to manage. That's why we need to separate it first. Our project will separate 4 types of waste consist of aluminum can, glass, paper, and plastic",
 
     "cnn":"Convulotional Neural Network",
-    "cnnContent":"Content",
+    "cnnContent":"A Convolutional Neural Network (ConvNet/CNN) is a Deep Learning algorithm which can take in an input image, assign importance (learnable weights and biases) to various aspects/objects in the image and be able to differentiate one from the other. The pre-processing required in a ConvNet is much lower as compared to other classification algorithms.",
+    "cnnContent1":"While in primitive methods filters are hand-engineered, with enough training, ConvNets have the ability to learn these filters/characteristics. The architecture of a ConvNet is analogous to that of the connectivity pattern of Neurons in the Human Brain and was inspired by the organization of the Visual Cortex. Individual neurons respond to stimuli only in a restricted region of the visual field known as the Receptive Field. A collection of such fields overlap to cover the entire visual area.",
 
     "sensor": "Sensor",
-    "sensorContent": "Content",
+    "sensorContent": "In the broadest definition, a sensor is a device, module, machine, or subsystem whose purpose is to detect events or changes in its environment and send the information to other electronics, frequently a computer processor. A sensor is always used with other electronics. Our project using Ultrasonic and Magnet Door Sensor.",
+    "ultrasonic": "Ultra-Sonic Sensor",
+    "ultraContent":"Work by sending an ultrasonic wave to impact an object, then reflect wave back to the sensor and calculate the distance from it.",
+    "magnet": "Magnetic Door Switch ",
+    "magnetContent": "Using magnet with door and switch set with door frame. When the door is opening, the switch will not working because the current can't flow through.",
 
     "aiewName": "Tanapat Phetkamnoet",
     "aiewRole": "Mechanic Master",

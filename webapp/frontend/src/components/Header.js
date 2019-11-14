@@ -15,7 +15,7 @@ const Header = () => {
                 </li>
             </ul>
             <ul className="col-sm-4 nav navbar-nav justify-content-center">
-            <span class="navbar-brand mx-auto">Smart Bin</span>
+            <span class="navbar-brand mx-auto"><img src={require('./icon/logo1.png')} alt="responsive" width="100px" /></span>
             </ul>
             <ul class="col-sm-4 nav navbar-nav mr-0 justify-content-end">
                 <li class="nav-item">

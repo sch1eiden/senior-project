@@ -1,6 +1,6 @@
 #overlay-cnn {
     position: relative;
-    margin-top: -35%;
+    margin-top: -30%;
     margin-left: 2%;
     margin-bottom: 1%;
     width: 50%;
@@ -9,7 +9,7 @@
 
 #overlay-cnn-img {
     position: relative;
-    margin-top: -30%;
+    margin-top: -32%;
     margin-left: 60%;
     width:30%;
     height:30%;
@@ -24,7 +24,7 @@
 
 #overlay-cnn-img1 {
     position: relative;
-    margin-top: -35%;
+    margin-top: -41%;
     width:30%;
     height:30%;
 }

@@ -5,8 +5,8 @@ const Header = () => {
     // eslint-disable-next-line
     const { t, i18n } = useTranslation()
     return (
-        <header className="navbar navbar-expand-sm fixed-top navbar-light bg-light">
-            <ul class="col-sm-4 nav navbar-nav ml-0 justify-content-start">
+        <header id="Header" className="navbar navbar-expand-sm fixed-top navbar-light bg-light">
+            <ul class="col-sm-4 nav navbar-nav ml-0 justify-content-start" align="center">
                 <li class="nav-item">
                     <a class="nav-link" href="/">{t('home')}</a>
                 </li>
@@ -17,7 +17,7 @@ const Header = () => {
             <ul className="col-sm-4 nav navbar-nav justify-content-center">
             <span class="navbar-brand mx-auto"><img src={require('./icon/logo1.png')} alt="responsive" width="100px" /></span>
             </ul>
-            <ul class="col-sm-4 nav navbar-nav mr-0 justify-content-end">
+            <ul class="col-sm-4 nav navbar-nav mr-0 justify-content-end" align="center">
                 <li class="nav-item">
                     <img src={require('./icon/en.jpg')} onClick={() => i18n.changeLanguage("en")} alt="responsive" width="20px" style={{"cursor": "pointer"}}/>
                 </li>

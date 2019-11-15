@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 import './css/contact.css'
 const Contact = ({t}) => {
     return (
-        <div id="Contact" className="container-fluid">
+        <div id="Contact" className="container">
             <h5 className="display-4">{t('contact')}</h5>
             <div className="row">
                 <div className="col-sm-4">

@@ -35,7 +35,7 @@ const BinGraph = ({t}) => {
                 data.push({
                     "docId": document.id,
                     "id": document.data().id,
-                    "date": moment(document.data().date.toDate()).format("DD/MM/YYYY"),
+                    "date": moment(document.data().date && document.data().date.toDate()).format("DD/MM/YYYY"),
                 })
             })
 
@@ -43,7 +43,8 @@ const BinGraph = ({t}) => {
             let glass = {};
             let paper = {};
             let plastic = {};
-
+            
+            console.log('data', data)
             for (let i=0; i<daysAfter.length; i++){
                 let unused = _.filter(data, {'date': daysAfter[i]});
                 if(unused.length !== 0){

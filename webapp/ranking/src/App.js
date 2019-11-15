@@ -13,19 +13,17 @@ const App = () => {
   useEffect(() => {
     const unsubscribe = db.collection('ranks').onSnapshot(ss => {
       let data = [];
-      let id = [];
       ss.forEach(document => {
         data.push({
           "docId": document.id,
           "id": document.data().id,
           "date": moment(document.data().date.toDate()).format("DD/MM/YYYY"),
         })
-        id.push(document.data().id)
       })
       setData(data);
-      for (let i=0; i< id.length; i++) {
+      setRankPie({
         
-      }
+      })
     })
     return () => {
       unsubscribe();

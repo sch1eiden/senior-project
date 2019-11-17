@@ -5,7 +5,10 @@ const App = () => {
   
   return (
     <div id="App" className="container-fluid">
-      <h1 className="display-4" align="center">Smart Bin Ranking</h1>
+      <header align="center">
+        <img src={require('./img/logo.png')} alt="responsive" width="15%" align="center" />
+      </header>
+      <h1 className="display-4" align="center">Ranking</h1>
       <DoughnutChart />
     </div>
   );

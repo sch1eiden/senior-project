@@ -5,7 +5,7 @@ import Amount from '../components/dashboard/amount';
 
 const Dashboard = ({t}) => {
     return (
-        <div className="container-fluid" id="Dashboard">
+        <div className="container" id="Dashboard">
             <h3 className="display-4" align="center">{t('dashboard')}</h3>
             <Level />
             <Amount />

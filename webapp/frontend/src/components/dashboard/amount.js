@@ -8,7 +8,7 @@ const Amount = ({t}) => {
     return (
         <section>
             <div id="Statistic" className="row">
-                <div className="col-sm-6">
+                <div className="col-sm-4">
                     <Fade left>
                         <div id="statisticCard" className="card bg-light card-body">
                             <h1 className="card-title">{t('statistic')}</h1>
@@ -16,7 +16,7 @@ const Amount = ({t}) => {
                         </div>
                     </Fade>
                 </div>
-                <div id="BinGraph" className="col-sm-6">
+                <div id="BinGraph" className="col-sm-8">
                     <Fade right>
                         <BinGraph />
                     </Fade>

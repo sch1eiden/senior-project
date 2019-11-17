@@ -13,9 +13,9 @@ const DoughnutChart = () => {
       const dict = {
         '0012616179': "Dog",
         '0012627617': "Bear",
-        '0007833001': "Cat",
-        '0014166168': "Rabbit",
         '0012710847': "Bird",
+        '0014166168': "Rabbit",
+        '0017166168': "Cat",
       };
       let rawdata = [];
       ss.forEach(document => {
@@ -31,10 +31,10 @@ const DoughnutChart = () => {
             "title": dict['0012627617'],
             "score": document.data().deposit,
           })
-        } else if(document.id==='0007833001') {
+        } else if(document.id==='0012710847') {
           rawdata.push({
             "id": document.id,
-            "title": dict['0007833001'],
+            "title": dict['0012710847'],
             "score": document.data().deposit,
           })
         } else if(document.id==='0014166168') {
@@ -43,10 +43,10 @@ const DoughnutChart = () => {
             "title": dict['0014166168'],
             "score": document.data().deposit,
           })
-        } else if(document.id==='0012710847') {
+        } else if(document.id==='0017166168') {
           rawdata.push({
             "id": document.id,
-            "title": dict['0012710847'],
+            "title": dict['0017166168'],
             "score": document.data().deposit,
           })
         } else {
@@ -69,9 +69,8 @@ const DoughnutChart = () => {
             'rgba(80, 80, 255, 0.8)',
             'rgba(240, 193, 251, 0.8)',
           ],
-          }
-        ],
-        
+          borderColor:'black',
+        }],
       })
     })
     return () => {

@@ -175,7 +175,7 @@ const BinGraph = ({t}) => {
                 display:true,
                 ticks: {
                     beginAtZero:true,
-                    suggestedMax: 100,
+                    suggestedMax: 10,
                 }
             }]
         }

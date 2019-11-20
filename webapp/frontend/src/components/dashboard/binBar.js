@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Bar } from 'react-chartjs-2';
-import config from '../../firebase';
-import { withTranslation } from 'react-i18next';
+import React, { useState, useEffect } from 'react'
+import { Bar } from 'react-chartjs-2'
+import config from '../../firebase'
+import { withTranslation } from 'react-i18next'
 
-const db = config.firestore();
+const db = config.firestore()
 
-const BinBar = ({t}) => {
-    const [binBar, setBinBar] = useState([]);
-    /* eslint-disable */
+const BinBar = ({ t }) => {
+	const [binBar, setBinBar] = useState([])
+	/* eslint-disable */
     const [level, setLevel] = useState({});
     const [title, setTitle] = useState({});
     

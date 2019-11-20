@@ -15,7 +15,7 @@ const DoughnutChart = () => {
         '0012627617': "Bear",
         '0012710847': "Bird",
         '0014166168': "Rabbit",
-        '0017166168': "Cat",
+        '0007833001': "Cat",
       };
       let rawdata = [];
       ss.forEach(document => {
@@ -43,10 +43,10 @@ const DoughnutChart = () => {
             "title": dict['0014166168'],
             "score": document.data().deposit,
           })
-        } else if(document.id==='0017166168') {
+        } else if(document.id==='0007833001') {
           rawdata.push({
             "id": document.id,
-            "title": dict['0017166168'],
+            "title": dict['0007833001'],
             "score": document.data().deposit,
           })
         } else {

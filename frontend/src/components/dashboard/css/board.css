@@ -1,0 +1,34 @@
+#levelCard {
+    margin-top: 10%;
+}
+
+#statisticCard {
+    margin-top: 10%;
+}
+
+#Level {
+    margin-top: 5%;
+}
+#Statistic {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+@media only screen and (max-width: 812px) {
+    #BinBar {
+        margin-top: 10%;
+    }
+    #BinGraph {
+        margin-top: 10%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    #BinBar {
+        margin-top: 10%;
+    }
+    #BinGraph {
+        margin-top: -65%;
+    }
+    #statisticCard {
+        margin-top: 60%;
+    }
+}

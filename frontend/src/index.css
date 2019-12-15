@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit|Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Itim&display=swap');
+/* a {
+  font-family: 'Kanit','Roboto', sans-serif;
+} */
+div {
+  font-family: 'Itim', cursive;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +14,52 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#page-wrap {
+  display: block;
+  overflow: auto;
+}
+
+#main {/* Same as the width of the sidenav */
+  margin-top: 2.5rem;
+  margin-bottom: 0rem;
+  font-size: 16px; /* Increased text to enable scrolling */
+  padding: 0px 0px;
+  min-height: 100vh;
+}
+
+.display-3 {
+  text-align: center;
+}
+
+.display-4 {
+  text-align: center;
+}
+
+.row {
+  margin-top: 1%;
+}
+
+#Dashboard {
+  margin-top:5%;
+}
+
+#Contact {
+  margin-top:5%;
+}
+
+@media only screen and (max-width: 400px) {
+  #Contact {
+    margin-top: 60%;
+  }
+  #Dashboard {
+    margin-top:60%;
+  }
 }

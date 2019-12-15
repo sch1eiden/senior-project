@@ -5,7 +5,9 @@ First SetUp
 Prerequisite
 
 1.Python 3.7.4 x64
+
 2.Visual Studio Code
+
 3.NodeJS
 
 Open Web application

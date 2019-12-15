@@ -43,8 +43,7 @@ const BinGraph = ({t}) => {
             let glass = {};
             let paper = {};
             let plastic = {};
-            
-            console.log('data', data)
+
             for (let i=0; i<daysAfter.length; i++){
                 let unused = _.filter(data, {'date': daysAfter[i]});
                 if(unused.length !== 0){

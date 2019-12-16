@@ -8,7 +8,7 @@ Prerequisite
 
 2.Visual Studio Code
 
-3.NodeJS
+3.NodeJS latest version
 
 Open Web application
 1. Go to 'frontend' folder
